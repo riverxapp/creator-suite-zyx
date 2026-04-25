@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Chirag Dodiya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <script>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-100 via-white to-blue-50 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70">
+    <nav>
+      <div class="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6">
+        <a href="index.html" class="flex items-center gap-3 transition hover:opacity-90">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white shadow-xl">
+            <span class="text-sm font-bold">CD</span>
+          </div>
+          <span class="text-xl font-bold tracking-tight">Chirag Dodiya</span>
+        </a>
+        <div class="hidden items-center gap-6 md:flex">
+          <a href="index.html#about" class="text-sm font-medium transition hover:text-indigo-600">About</a>
+          <a href="index.html#skills" class="text-sm font-medium transition hover:text-indigo-600">Skills</a>
+          <a href="index.html#experience" class="text-sm font-medium transition hover:text-indigo-600">Experience</a>
+          <a href="index.html#education" class="text-sm font-medium transition hover:text-indigo-600">Education</a>
+          <a href="projects.html" class="text-sm font-medium text-indigo-600 transition hover:text-indigo-800">Projects</a>
+          <a href="index.html#contact" class="text-sm font-medium transition hover:text-indigo-600">Contact</a>
+        </div>
+        <div class="hidden md:flex md:items-center md:gap-3">
+          <button type="button" id="theme-toggle" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60" aria-label="Toggle theme">
+            <svg id="icon-sun" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg id="icon-moon" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <a href="index.html#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-2.5 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">Get in Touch</a>
+        </div>
+        <div class="flex items-center gap-1 md:hidden">
+          <button type="button" id="theme-toggle-mobile" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60" aria-label="Toggle theme">
+            <svg id="icon-sun-mobile" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg id="icon-moon-mobile" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <button type="button" id="mobile-menu-btn" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60 md:hidden" aria-label="Toggle menu">
+            <svg id="icon-menu" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden border-t border-white/20 bg-white/90 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/90 md:hidden">
+        <div class="mx-auto flex max-w-[1600px] flex-col gap-2 px-4 py-3 sm:px-6">
+          <a href="index.html#about" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">About</a>
+          <a href="index.html#skills" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Skills</a>
+          <a href="index.html#experience" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Experience</a>
+          <a href="index.html#education" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Education</a>
+          <a href="projects.html" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Projects</a>
+          <a href="index.html#contact" class="mobile-link mt-1 inline-flex justify-center rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6">
+      <!-- Projects Hero -->
+      <section id="projects-hero" class="py-16 sm:py-28">
+        <div class="text-center">
+          <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-slate-900 via-indigo-700 to-blue-600 bg-clip-text text-transparent dark:from-white dark:via-indigo-400 dark:to-blue-400">Our Projects</h1>
+          <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-300">A curated collection of our latest work — from scalable platforms to developer tools. Each project represents a commitment to quality and innovation.</p>
+        </div>
+      </section>
+
+      <!-- Project Cards -->
+      <section class="pb-16 sm:pb-24">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Project 1 -->
+          <div class="flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">E-Commerce Platform</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A high-traffic e-commerce platform built with Next.js, Node.js, and PostgreSQL. Features include product discovery, shopping cart, payment integration, and real-time inventory management handling 50k+ daily orders.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Next.js</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Node.js</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">PostgreSQL</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Stripe</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 mt-2">View Project <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">Real-Time Analytics Dashboard</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A real-time analytics platform processing streaming data from 100k+ concurrent users. Built with React, D3.js, Kafka, and Redis for sub-second query responses and interactive visualizations.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">React</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Kafka</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Redis</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">D3.js</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 mt-2">View Project <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">Open Source CLI Tool</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A command-line tool for automating cloud infrastructure provisioning. Written in Python with extensive test coverage and documentation. 1,200+ GitHub stars and active community contributions.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Python</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">AWS</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Docker</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Terraform</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 mt-2">View Project <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">Microservices Orchestrator</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A comprehensive orchestration layer for managing microservices deployments, service discovery, and health monitoring. Built with Go, gRPC, and Kubernetes for enterprise-grade reliability.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Go</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">gRPC</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Kubernetes</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Prometheus</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 mt-2">View Project <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">AI-Powered Recommendation Engine</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A machine learning-based recommendation system serving 2M+ personalized suggestions daily. Uses collaborative filtering and neural networks, deployed on AWS SageMaker with real-time inference.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Python</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">TensorFlow</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">AWS SageMaker</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Redis</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 mt-2">View Project <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">Collaborative Whiteboard App</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A real-time collaborative whiteboard supporting 50+ concurrent users with low-latency drawing, sticky notes, and video chat integration. Built with WebSockets, React Canvas, and WebRTC.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">React</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">WebSocket</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">WebRTC</span>
+              <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Canvas</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 mt-2">View Project <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="pb-16 sm:pb-24">
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-8 py-14 text-center text-white shadow-2xl sm:px-12">
+          <div class="absolute -left-12 -top-12 h-32 w-32 rounded-full bg-white/10"></div>
+          <div class="absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-white/10"></div>
+          <div class="relative mx-auto max-w-2xl">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Have a Project in Mind?</h2>
+            <p class="mt-4 text-base text-blue-100/90 sm:text-lg">Let's collaborate to bring your vision to life. Whether it's a new platform or improving an existing one, I'm here to help.</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+              <a href="index.html#contact" class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-lg transition hover:scale-105 hover:shadow-xl">Get in Touch</a>
+              <a href="index.html" class="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Back to Home</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/20 bg-gradient-to-t from-slate-100 to-white dark:from-slate-950 dark:to-slate-900 dark:border-slate-800/60">
+    <div class="mx-auto flex max-w-[1600px] flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2"><span class="text-base font-semibold text-slate-900 dark:text-slate-50">Chirag Dodiya</span><span class="text-xs text-slate-400 dark:text-slate-500">Senior Software Engineer</span></div>
+        <p class="max-w-md text-xs text-slate-500 dark:text-slate-400">Building scalable systems and elegant experiences.</p>
+        <p class="text-xs text-slate-400 dark:text-slate-500">© <span id="year"></span> Chirag Dodiya. All rights reserved.</p>
+      </div>
+      <div class="flex gap-4 text-sm text-slate-500 dark:text-slate-400">
+        <a href="#" class="hover:text-indigo-600">GitHub</a>
+        <a href="#" class="hover:text-indigo-600">LinkedIn</a>
+        <a href="#" class="hover:text-indigo-600">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+(function () {
+  'use strict';
+  function initTheme() {
+    const toggle = () => {
+      const root = document.documentElement;
+      const isDark = root.classList.contains('dark');
+      root.classList.remove('light', 'dark');
+      root.classList.add(isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    };
+    document.getElementById('theme-toggle')?.addEventListener('click', toggle);
+    document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggle);
+  }
+  function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      if (iconMenu) iconMenu.classList.toggle('hidden', !isOpen);
+      if (iconClose) iconClose.classList.toggle('hidden', isOpen);
+    });
+    menu.querySelectorAll('.mobile-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        if (iconMenu) iconMenu.classList.remove('hidden');
+        if (iconClose) iconClose.classList.add('hidden');
+      });
+    });
+  }
+  function initYear() {
+    const el = document.getElementById('year');
+    if (el) el.textContent = new Date().getFullYear();
+  }
+  initTheme();
+  initMobileMenu();
+  initYear();
+})();
+  </script>
+
+       <!-- PANDA ELEMENT SELECTION SCRIPT -->
+        <script src="https://bfwqdadlcyndtaqmqtci.supabase.co/storage/v1/object/public/pandajs/panda-element-selection.js" defer></script>
+        <!-- PANDA BRANDING SCRIPT -->
+        <script src="https://bfwqdadlcyndtaqmqtci.supabase.co/storage/v1/object/public/pandajs/panda-branding.js" defer></script>
+        <!-- PANDA AUTO RELOAD SCRIPT -->
+        <script>
+        const es = new EventSource("/__hmr");
+        es.onmessage = () => location.reload();
+        </script>
+</body>
+</html>
