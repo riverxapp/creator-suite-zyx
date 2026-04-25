@@ -1,13 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chirag Dodiya - Senior Software Engineer</title>
-  <meta http-equiv="refresh" content="0; url=index.html" />
-  <link rel="canonical" href="index.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <script>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
 </head>
-<body>
-  <p>Redirecting to <a href="index.html">index.html</a>...</p>
+<body class="min-h-screen bg-gradient-to-br from-slate-100 via-white to-blue-50 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70">
+    <nav>
+      <div class="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6">
+        <a href="#hero" class="flex items-center gap-3 transition hover:opacity-90">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white shadow-xl">
+            <span class="text-sm font-bold">CD</span>
+          </div>
+          <span class="text-xl font-bold tracking-tight">Chirag Dodiya</span>
+        </a>
+        <div class="hidden items-center gap-6 md:flex">
+          <a href="index.html#about" class="text-sm font-medium transition hover:text-indigo-600">About</a>
+          <a href="index.html#skills" class="text-sm font-medium transition hover:text-indigo-600">Skills</a>
+          <a href="index.html#experience" class="text-sm font-medium transition hover:text-indigo-600">Experience</a>
+          <a href="index.html#education" class="text-sm font-medium transition hover:text-indigo-600">Education</a>
+          <a href="projects.html" class="text-sm font-medium transition hover:text-indigo-600">Projects</a>
+          <a href="index.html#contact" class="text-sm font-medium transition hover:text-indigo-600">Contact</a>
+        </div>
+        <div class="hidden md:flex md:items-center md:gap-3">
+          <button type="button" id="theme-toggle" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60" aria-label="Toggle theme">
+            <svg id="icon-sun" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg id="icon-moon" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <a href="index.html#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-2.5 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">Get in Touch</a>
+        </div>
+        <div class="flex items-center gap-1 md:hidden">
+          <button type="button" id="theme-toggle-mobile" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60" aria-label="Toggle theme">
+            <svg id="icon-sun-mobile" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg id="icon-moon-mobile" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <button type="button" id="mobile-menu-btn" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60 md:hidden" aria-label="Toggle menu">
+            <svg id="icon-menu" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden border-t border-white/20 bg-white/90 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/90 md:hidden">
+        <div class="mx-auto flex max-w-[1600px] flex-col gap-2 px-4 py-3 sm:px-6">
+          <a href="index.html#about" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">About</a>
+          <a href="index.html#skills" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Skills</a>
+          <a href="index.html#experience" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Experience</a>
+          <a href="index.html#education" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Education</a>
+          <a href="projects.html" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Projects</a>
+          <a href="index.html#contact" class="mobile-link mt-1 inline-flex justify-center rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6">
+      <!-- Hero -->
+      <section id="hero" class="py-16 sm:py-28">
+        <div class="grid items-center gap-16 lg:grid-cols-2">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-[11px] sm:text-sm font-semibold uppercase tracking-wider text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300">Senior Software Engineer</span>
+            <h1 class="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-slate-900 via-indigo-700 to-blue-600 bg-clip-text text-transparent dark:from-white dark:via-indigo-400 dark:to-blue-400">Hi, I'm Chirag Dodiya</h1>
+            <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-300">I build scalable systems and elegant user experiences that drive business impact. With a passion for clean architecture and modern web technologies, I help teams ship better software faster.</p>
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="index.html#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">Get in Touch</a>
+              <a href="projects.html" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold transition hover:bg-white/60 dark:border-slate-700 dark:hover:bg-slate-800/40">View My Work <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M12.293 5.293a1 1 0 011.414 0L17 8.586a2 2 0 010 2.828l-3.293 3.293a1 1 0 01-1.414-1.414L13.586 11H5a1 1 0 110-2h8.586l-1.293-1.293a1 1 0 010-1.414z"/></svg></a>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="relative overflow-hidden rounded-3xl border border-white/30 bg-white/70 shadow-2xl backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/60">
+              <div class="relative h-80 sm:h-96 lg:h-[28rem]">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80" alt="Chirag Dodiya" class="h-full w-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="border-y border-white/20 py-16 dark:border-slate-800/60">
+        <div class="mx-auto max-w-5xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">About Me</h2>
+          <p class="mt-6 max-w-3xl mx-auto text-base leading-relaxed text-slate-600 dark:text-slate-400">I am a Senior Software Engineer with over 8 years of experience designing and building high-performance web applications. I specialize in full-stack development with React, Node.js, and cloud-native architectures on AWS. My expertise spans microservices, API design, and leading engineering teams to deliver complex projects on time and within budget. I believe in writing clean, maintainable code and fostering a culture of collaboration and continuous improvement.</p>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="py-16 sm:py-24">
+        <div class="mx-auto max-w-5xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Technical Skills</h2>
+          <p class="mt-3 text-sm text-slate-600 sm:text-base">Core tools and technologies I work with daily.</p>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="flex flex-col items-center gap-3 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Frontend</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">React, Next.js, TypeScript, Tailwind CSS, Redux</p>
+          </div>
+          <div class="flex flex-col items-center gap-3 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Backend</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Node.js, Express, Python, Java, REST APIs, GraphQL</p>
+          </div>
+          <div class="flex flex-col items-center gap-3 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">DevOps & Cloud</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">AWS, Docker, Kubernetes, CI/CD, Terraform</p>
+          </div>
+          <div class="flex flex-col items-center gap-3 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Databases</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">PostgreSQL, MongoDB, Redis, Elasticsearch</p>
+          </div>
+          <div class="flex flex-col items-center gap-3 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Testing</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Jest, Cypress, Playwright, Mocha, Chai</p>
+          </div>
+          <div class="flex flex-col items-center gap-3 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Methodologies</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Agile, Scrum, Code Reviews, Domain-Driven Design</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="border-y border-white/20 py-16 sm:py-24 dark:border-slate-800/60">
+        <div class="mx-auto max-w-5xl">
+          <h2 class="text-3xl font-bold tracking-tight text-center text-slate-900 dark:text-slate-50 sm:text-4xl">Professional Experience</h2>
+          <p class="mt-3 text-sm text-slate-600 text-center sm:text-base">A timeline of my career highlights.</p>
+          <div class="mt-10 space-y-8">
+            <div class="flex flex-col gap-2 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/60">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">Senior Software Engineer</h3>
+                <span class="text-xs text-slate-500 dark:text-slate-400">Jan 2021 - Present</span>
+              </div>
+              <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400">TechNova Solutions</p>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Led the redesign of the core platform's microservices architecture, improving system reliability by 40% and reducing deployment time by 60%. Mentored a team of 5 engineers and drove adoption of automated testing practices.</p>
+            </div>
+            <div class="flex flex-col gap-2 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/60">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">Software Engineer III</h3>
+                <span class="text-xs text-slate-500 dark:text-slate-400">Jun 2018 - Dec 2020</span>
+              </div>
+              <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400">CloudPeak Systems</p>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Built and maintained scalable REST APIs and event-driven services handling 10M+ daily requests. Spearheaded the migration from a monolithic application to a service-oriented architecture.</p>
+            </div>
+            <div class="flex flex-col gap-2 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/60">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">Software Engineer</h3>
+                <span class="text-xs text-slate-500 dark:text-slate-400">Sep 2016 - May 2018</span>
+              </div>
+              <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400">DataFlow Labs</p>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Developed customer-facing features using React and Node.js. Contributed to the design of a real-time data processing pipeline and optimized database queries, reducing load times by 35%.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="py-16 sm:py-24">
+        <div class="mx-auto max-w-5xl">
+          <h2 class="text-3xl font-bold tracking-tight text-center text-slate-900 dark:text-slate-50 sm:text-4xl">Education</h2>
+          <p class="mt-3 text-sm text-slate-600 text-center sm:text-base">My academic background.</p>
+          <div class="mt-10 space-y-8">
+            <div class="flex flex-col gap-2 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/60">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">Master of Science in Computer Science</h3>
+                <span class="text-xs text-slate-500 dark:text-slate-400">2014 - 2016</span>
+              </div>
+              <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400">University of Technology</p>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Thesis on distributed systems and fault-tolerant microservices. GPA: 3.9/4.0</p>
+            </div>
+            <div class="flex flex-col gap-2 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/60">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">Bachelor of Engineering in Information Technology</h3>
+                <span class="text-xs text-slate-500 dark:text-slate-400">2010 - 2014</span>
+              </div>
+              <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400">State University</p>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Graduated with honors. Active in competitive programming and open-source contributions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="border-y border-white/20 py-16 sm:py-24 dark:border-slate-800/60">
+        <div class="mx-auto max-w-5xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Projects</h2>
+          <p class="mt-3 text-sm text-slate-600 sm:text-base">A selection of work I'm proud of.</p>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="flex flex-col gap-3 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">E-Commerce Platform</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">A high-traffic e-commerce platform built with Next.js, Node.js, and PostgreSQL. Features include product discovery, shopping cart, payment integration, and real-time inventory management.</p>
+            <div class="mt-auto flex gap-2 text-xs font-medium text-indigo-600 dark:text-indigo-400">
+              <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Real-Time Analytics Dashboard</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">A real-time analytics platform processing streaming data from 100k+ concurrent users. Built with React, D3.js, Kafka, and Redis for sub-second query responses.</p>
+            <div class="mt-auto flex gap-2 text-xs font-medium text-indigo-600 dark:text-indigo-400">
+              <span>React</span><span>Kafka</span><span>Redis</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Open Source CLI Tool</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">A command-line tool for automating cloud infrastructure provisioning. Written in Python with extensive test coverage and documentation. 1,200+ GitHub stars.</p>
+            <div class="mt-auto flex gap-2 text-xs font-medium text-indigo-600 dark:text-indigo-400">
+              <span>Python</span><span>AWS</span><span>Docker</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-16 sm:py-24">
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-8 py-14 text-center text-white shadow-2xl sm:px-12">
+          <div class="absolute -left-12 -top-12 h-32 w-32 rounded-full bg-white/10"></div>
+          <div class="absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-white/10"></div>
+          <div class="relative mx-auto max-w-2xl">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Let's Build Something Great Together</h2>
+            <p class="mt-4 text-base text-blue-100/90 sm:text-lg">Whether you have a project in mind or just want to say hello, I'd love to hear from you.</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+              <a href="mailto:chirag.dodiya@example.com" class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-lg transition hover:scale-105 hover:shadow-xl">Email Me</a>
+              <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">LinkedIn</a>
+            </div>
+            <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm text-blue-100/80">
+              <span>chirag.dodiya@example.com</span>
+              <span>+1 (555) 123-4567</span>
+              <span>San Francisco, CA</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/20 bg-gradient-to-t from-slate-100 to-white dark:from-slate-950 dark:to-slate-900 dark:border-slate-800/60">
+    <div class="mx-auto flex max-w-[1600px] flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2"><span class="text-base font-semibold text-slate-900 dark:text-slate-50">Chirag Dodiya</span><span class="text-xs text-slate-400 dark:text-slate-500">Senior Software Engineer</span></div>
+        <p class="max-w-md text-xs text-slate-500 dark:text-slate-400">Building scalable systems and elegant experiences.</p>
+        <p class="text-xs text-slate-400 dark:text-slate-500">© <span id="year"></span> Chirag Dodiya. All rights reserved.</p>
+      </div>
+      <div class="flex gap-4 text-sm text-slate-500 dark:text-slate-400">
+        <a href="#" class="hover:text-indigo-600">GitHub</a>
+        <a href="#" class="hover:text-indigo-600">LinkedIn</a>
+        <a href="#" class="hover:text-indigo-600">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+(function () {
+  'use strict';
+  function initTheme() {
+    const toggle = () => {
+      const root = document.documentElement;
+      const isDark = root.classList.contains('dark');
+      root.classList.remove('light', 'dark');
+      root.classList.add(isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    };
+    document.getElementById('theme-toggle')?.addEventListener('click', toggle);
+    document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggle);
+  }
+  function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      if (iconMenu) iconMenu.classList.toggle('hidden', !isOpen);
+      if (iconClose) iconClose.classList.toggle('hidden', isOpen);
+    });
+    menu.querySelectorAll('.mobile-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        if (iconMenu) iconMenu.classList.remove('hidden');
+        if (iconClose) iconClose.classList.add('hidden');
+      });
+    });
+  }
+  function initYear() {
+    const el = document.getElementById('year');
+    if (el) el.textContent = new Date().getFullYear();
+  }
+  initTheme();
+  initMobileMenu();
+  initYear();
+})();
+  </script>
+
+       <!--
+          PANDA ELEMENT SELECTION SCRIPT
+          ===============================
+          Captures all element clicks inside the iframe and sends metadata to Bubble via postMessage.
+          Metadata captured: url, width, height, alt
+            ⚠ Do NOT remove or modify this script unless explicitly instructed by the admin.
+        -->
+        <script src="https://bfwqdadlcyndtaqmqtci.supabase.co/storage/v1/object/public/pandajs/panda-element-selection.js" defer></script>
+
+        <!--
+          PANDA BRANDING SCRIPT
+          ====================
+          Handles Panda-specific branding, logos, placeholders, and runtime injection for the iframe/editor.
+            ⚠ Do NOT remove or modify this script unless explicitly instructed by the admin.
+        -->
+        <script src="https://bfwqdadlcyndtaqmqtci.supabase.co/storage/v1/object/public/pandajs/panda-branding.js" defer></script>
+        <!--
+          PANDA AUTO RELOAD SCRIPT
+          ====================
+          Handles Panda HMR solution built on railway to hot reload changes in preview.
+            ⚠ Do NOT remove or modify this script unless explicitly instructed by the admin.
+        -->
+        <script>
+        const es = new EventSource("/__hmr");
+        es.onmessage = () => location.reload();
+        </script>
 </body>
 </html>
