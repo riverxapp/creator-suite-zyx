@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Chirag Dodiya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <script>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-100 via-white to-blue-50 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70">
+    <nav>
+      <div class="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6">
+        <a href="index.html" class="flex items-center gap-3 transition hover:opacity-90">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white shadow-xl">
+            <span class="text-sm font-bold">CD</span>
+          </div>
+          <span class="text-xl font-bold tracking-tight">Chirag Dodiya</span>
+        </a>
+        <div class="hidden items-center gap-6 md:flex">
+          <a href="index.html#about" class="text-sm font-medium transition hover:text-indigo-600">About</a>
+          <a href="index.html#skills" class="text-sm font-medium transition hover:text-indigo-600">Skills</a>
+          <a href="index.html#experience" class="text-sm font-medium transition hover:text-indigo-600">Experience</a>
+          <a href="index.html#education" class="text-sm font-medium transition hover:text-indigo-600">Education</a>
+          <a href="index.html#contact" class="text-sm font-medium transition hover:text-indigo-600">Contact</a>
+          <a href="index.html" class="rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:scale-105">Home</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 py-16 sm:py-24">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50 sm:text-5xl">All Projects</h1>
+        <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">A curated collection of work I've delivered with measurable impact.</p>
+      </div>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">E-Commerce Platform</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">High-traffic platform with Next.js, Node.js, PostgreSQL. Features product discovery, cart, payments, and real-time inventory.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-indigo-600 dark:text-indigo-400">
+            <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+          </div>
+          <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:underline dark:text-indigo-400">View Details <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+        <div class="rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">Real-Time Analytics Dashboard</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Processes streaming data from 100k+ concurrent users using React, D3.js, Kafka, and Redis for sub-second queries.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-indigo-600 dark:text-indigo-400">
+            <span>React</span><span>Kafka</span><span>Redis</span>
+          </div>
+          <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:underline dark:text-indigo-400">View Details <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+        <div class="rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">Open Source CLI Tool</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">CLI tool for automating cloud infrastructure provisioning, written in Python with extensive test coverage. 1,200+ GitHub stars.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-indigo-600 dark:text-indigo-400">
+            <span>Python</span><span>AWS</span><span>Docker</span>
+          </div>
+          <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:underline dark:text-indigo-400">View Details <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
